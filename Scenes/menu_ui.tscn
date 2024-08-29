@@ -1,0 +1,140 @@
+[gd_scene load_steps=14 format=3 uid="uid://d1km5jidkihcl"]
+
+[ext_resource type="FontFile" uid="uid://cbh4o7uvh08ww" path="res://UI/Font/Roboto-Black.ttf" id="1_wuebl"]
+[ext_resource type="Texture2D" uid="uid://dbutq1bvh1hs5" path="res://UI/GUI/Gen UI/UI_COLORBAR (1).png" id="2_6teix"]
+[ext_resource type="Texture2D" uid="uid://y3a3rf3lqoni" path="res://UI/GUI/Buttons/BTN_ORANGE_RECT_OUT.png" id="2_un0yd"]
+[ext_resource type="Texture2D" uid="uid://dcdvr8i2hinb4" path="res://UI/Images/Ake_Ake_Ake_Profile_Photo_Icon_with_Text.png" id="3_omaor"]
+[ext_resource type="Texture2D" uid="uid://bnb3kaahmo17q" path="res://UI/GUI/Buttons/BTN_LORANGE_RECT_OUT.png" id="3_rffbo"]
+[ext_resource type="Texture2D" uid="uid://c06la42ev0t85" path="res://UI/GUI/Buttons/BTN_LORANGE_RECT_IN.png" id="4_2bv30"]
+[ext_resource type="FontFile" uid="uid://cmf81weueq5sl" path="res://UI/Font/Roboto-Bold.ttf" id="4_8hf4x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhf8l"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_enufj"]
+texture = ExtResource("2_6teix")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+expand_margin_top = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tmkit"]
+texture = ExtResource("3_omaor")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m8eyo"]
+texture = ExtResource("2_un0yd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3iu3s"]
+texture = ExtResource("3_rffbo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n55h8"]
+texture = ExtResource("4_2bv30")
+
+[node name="menu_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="main_panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qhf8l")
+
+[node name="title_label" type="Label" parent="main_panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 185.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.999203, 0.899867, 0.781827, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wuebl")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_enufj")
+text = "Reo Kupu"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="tiki_image_panel" type="Panel" parent="main_panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 54.0
+offset_top = -433.0
+offset_right = 543.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_tmkit")
+
+[node name="start_btn" type="Button" parent="main_panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -339.0
+offset_top = -44.0
+offset_right = -77.0
+offset_bottom = 50.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.968627, 0.576471, 0.117647, 1)
+theme_override_colors/font_hover_color = Color(0.811765, 0.211765, 0.298039, 1)
+theme_override_fonts/font = ExtResource("4_8hf4x")
+theme_override_styles/normal = SubResource("StyleBoxTexture_m8eyo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3iu3s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_n55h8")
+text = "Start"
+
+[node name="scores_btn" type="Button" parent="main_panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = 67.0
+offset_right = -77.0
+offset_bottom = 137.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_8hf4x")
+theme_override_styles/normal = SubResource("StyleBoxTexture_m8eyo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3iu3s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_n55h8")
+text = "Scores
+"
+
+[node name="quit_btn" type="Button" parent="main_panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = 154.0
+offset_right = -77.0
+offset_bottom = 224.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_8hf4x")
+theme_override_styles/normal = SubResource("StyleBoxTexture_m8eyo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3iu3s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_n55h8")
+text = "Quit"
