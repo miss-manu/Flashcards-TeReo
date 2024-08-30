@@ -17,34 +17,34 @@ tiaki, care
 ngeru, cat
 hui, meeting 
 marae, meeting house 
-Haere mai, welcome
-Nau mai, welcome
+haere mai, welcome
+nau mai, welcome
 tangihanga, funeral
 tangi, to cry
 karanga, calling to marae
 manuhiri, guests 
-Tangata whenua, local people
+tangata whenua, local people
 whaikōrero, speech
 haka, war dance
-Waiata, song
+waiata, song
 koha, gift
-Wharenui, meeting house
-Whare whakairo, carved meeting house
-Wharekai, dining hall
-Wharepaku, toilet
-Whare horoi, ablution block
-Mana, authority
-Manaakitanga, to look after
-Mauri, life force
+wharenui, meeting house
+whare whakairo, carved meeting house
+wharekai, dining hall
+wharepaku, toilet
+whare horoi, ablution block
+mana, authority
+manaakitanga, to look after
+mauri, life force
 noa, non-sacred
-Rohe, boundary
+rohe, boundary
 taihoa, to wait
 tapu, sacred
 taonga, anything precious
-Tino rangatiratanga, the highest chiefly authority
-Tūrangawaewae, a place to stand
+tino rangatiratanga, the highest chiefly authority
+tūrangawaewae, a place to stand
 wehi, to be held in awe
-Whakapapa, genealogy
+whakapapa, genealogy
 awa, river
 iti, small
 nui, big
@@ -110,3 +110,24 @@ ao, world (or day, cloud, dawn)
 manu, bird
 ariki, leader
 whai, be equipped (or have)
+ika, fish
+moenga, bed
+marama, moon
+rākau, tree
+tūao, volunteer
+muku, to wipe
+tiki, to get/fetch
+whakapai, tidy
+kimi, to search for
+tuhi, to write
+whakahoki, to put (something) back
+whakakā, to turn on or ignite
+keke, cake
+kūaha, door
+tuahine, sister (of a male)
+tawhiti, distant
+mārama, understand
+āe, yes
+kāo, no
+tēpu, table
+whaea, mother

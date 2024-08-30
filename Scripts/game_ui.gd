@@ -1,17 +1,16 @@
 extends Control
 
-@onready var answer_option1 = $Answer1_btn
-@onready var answer_option2 = $Answer2_btn
-@onready var answer_option3 = $Answer3_btn
+@onready var answer_option1 = $AspectRatioContainer/Answer1_btn
+@onready var answer_option2 = $AspectRatioContainer/Answer2_btn
+@onready var answer_option3 = $AspectRatioContainer/Answer3_btn
+@onready var answer_option4 = $AspectRatioContainer/Answer4_btn
 @onready var guess_word = $GuessWordLabel
-
-#Get the style box of lable to change display properties
-#var styleBox: StyleBoxFlat = get_theme_stylebox()
 
 var words = {}
 var current_word = ""
 var correct_translation = ""
 var score = 0
+var incorrect_guesses = 5
 
 # Called when the node enters the scene tree for the first time
 func _ready():
@@ -41,19 +40,24 @@ func set_new_word():
 	#styleBox.set("bg_color", Color(0.807, 0.807, 0.797))
 	guess_word.text = current_word
 	
+	 # Shuffle all words and pick incorrect options from them
+	var shuffled_words = words.values()
+	shuffled_words.shuffle()
+	
 	# Create a shuffled list of translation options
 	var options = [correct_translation]
 
 	# Collect additional incorrect options
 	var incorrect_options = []
-	for word in words.values():
+	for word in shuffled_words:
 		if word != correct_translation:
 			incorrect_options.append(word)
-			if incorrect_options.size() >= 2:
+			if incorrect_options.size() >= 3:
 				break
 	
-	# Add incorrect options to the list
+	# Add incorrect options to the list, then clear wrong answers
 	options += incorrect_options
+	incorrect_options.clear()
 	
 	options.shuffle()
 	
@@ -61,9 +65,11 @@ func set_new_word():
 	answer_option1.text = options[0]
 	answer_option2.text = options[1]
 	answer_option3.text = options[2]
+	answer_option4.text = options[3]
 
 func update_score():
 	$ScoreLabel.text = "Score: %d" % score
+	$LivesLabel.text = "Lives: %d" % incorrect_guesses
 
 func _on_answer_1_btn_pressed():
 	check_answer(answer_option1.text)
@@ -73,6 +79,9 @@ func _on_answer_2_btn_pressed():
 
 func _on_answer_3_btn_pressed():
 	check_answer(answer_option3.text)
+	
+func _on_answer_4_btn_pressed():
+	check_answer(answer_option4.text)
 
 func check_answer(selected_text):
 	if selected_text == correct_translation:
@@ -81,7 +90,8 @@ func check_answer(selected_text):
 		score += 1
 		# add to a 'fill the stars' bar and then progress up a level?
 	else:
-		# incorrect_attempts -= 1
+		# lose lives?
+		incorrect_guesses -= 1
 		to_try_again(correct_translation)
 	
 	set_new_word()

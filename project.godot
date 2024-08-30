@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Flashcards-TeReo"
-run/main_scene="res://Scenes/game_ui.tscn"
+run/main_scene="res://Scenes/menu_ui.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 

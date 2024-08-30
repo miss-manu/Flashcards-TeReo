@@ -42,6 +42,20 @@ theme_override_font_sizes/font_size = 25
 text = "Current score:"
 vertical_alignment = 1
 
+[node name="LivesLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 354.0
+offset_top = -168.0
+offset_right = 649.0
+offset_bottom = -88.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "Lives:"
+vertical_alignment = 1
+
 [node name="GuessWordLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 4
@@ -60,72 +74,57 @@ text = "Guess Word Display"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="GuessWordLabel"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -108.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Answer1_btn" type="Button" parent="."]
+[node name="AspectRatioContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -402.0
-offset_top = -144.0
-offset_right = -152.0
-offset_bottom = -69.0
+offset_left = -408.0
+offset_top = -158.0
+offset_right = -203.0
+offset_bottom = 159.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Answer1_btn" type="Button" parent="AspectRatioContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_dpn4j")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ofbnu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wyk10")
 text = "Answer 1"
 
-[node name="Answer2_btn" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -402.0
-offset_top = -29.0
-offset_right = -152.0
-offset_bottom = 46.0
-grow_horizontal = 0
-grow_vertical = 2
+[node name="Answer2_btn" type="Button" parent="AspectRatioContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_dpn4j")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ofbnu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wyk10")
 text = "Answer 2"
 metadata/_edit_use_anchors_ = true
 
-[node name="Answer3_btn" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -402.0
-offset_top = 86.0
-offset_right = -152.0
-offset_bottom = 161.0
-grow_horizontal = 0
-grow_vertical = 2
+[node name="Answer3_btn" type="Button" parent="AspectRatioContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_dpn4j")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ofbnu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wyk10")
 text = "Answer 3"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Answer1_btn" to="." method="_on_answer_1_btn_pressed"]
-[connection signal="pressed" from="Answer2_btn" to="." method="_on_answer_2_btn_pressed"]
-[connection signal="pressed" from="Answer3_btn" to="." method="_on_answer_3_btn_pressed"]
+[node name="Answer4_btn" type="Button" parent="AspectRatioContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_dpn4j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ofbnu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wyk10")
+text = "Answer 4"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="AspectRatioContainer/Answer1_btn" to="." method="_on_answer_1_btn_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/Answer2_btn" to="." method="_on_answer_2_btn_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/Answer3_btn" to="." method="_on_answer_3_btn_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/Answer4_btn" to="." method="_on_answer_4_btn_pressed"]
