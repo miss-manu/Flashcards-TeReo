@@ -74,7 +74,7 @@ text = "Guess Word Display"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AspectRatioContainer" type="VBoxContainer" parent="."]
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -89,7 +89,7 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="Answer1_btn" type="Button" parent="AspectRatioContainer"]
+[node name="Answer1_btn" type="Button" parent="ButtonContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_dpn4j")
@@ -97,7 +97,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_ofbnu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wyk10")
 text = "Answer 1"
 
-[node name="Answer2_btn" type="Button" parent="AspectRatioContainer"]
+[node name="Answer2_btn" type="Button" parent="ButtonContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_dpn4j")
@@ -106,7 +106,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_wyk10")
 text = "Answer 2"
 metadata/_edit_use_anchors_ = true
 
-[node name="Answer3_btn" type="Button" parent="AspectRatioContainer"]
+[node name="Answer3_btn" type="Button" parent="ButtonContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_dpn4j")
@@ -115,7 +115,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_wyk10")
 text = "Answer 3"
 metadata/_edit_use_anchors_ = true
 
-[node name="Answer4_btn" type="Button" parent="AspectRatioContainer"]
+[node name="Answer4_btn" type="Button" parent="ButtonContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_dpn4j")
@@ -124,7 +124,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_wyk10")
 text = "Answer 4"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="AspectRatioContainer/Answer1_btn" to="." method="_on_answer_1_btn_pressed"]
-[connection signal="pressed" from="AspectRatioContainer/Answer2_btn" to="." method="_on_answer_2_btn_pressed"]
-[connection signal="pressed" from="AspectRatioContainer/Answer3_btn" to="." method="_on_answer_3_btn_pressed"]
-[connection signal="pressed" from="AspectRatioContainer/Answer4_btn" to="." method="_on_answer_4_btn_pressed"]
+[connection signal="pressed" from="ButtonContainer/Answer1_btn" to="." method="_on_answer_1_btn_pressed"]
+[connection signal="pressed" from="ButtonContainer/Answer2_btn" to="." method="_on_answer_2_btn_pressed"]
+[connection signal="pressed" from="ButtonContainer/Answer3_btn" to="." method="_on_answer_3_btn_pressed"]
+[connection signal="pressed" from="ButtonContainer/Answer4_btn" to="." method="_on_answer_4_btn_pressed"]

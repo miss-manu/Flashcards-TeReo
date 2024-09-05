@@ -1,9 +1,9 @@
 extends Control
 
-@onready var answer_option1 = $AspectRatioContainer/Answer1_btn
-@onready var answer_option2 = $AspectRatioContainer/Answer2_btn
-@onready var answer_option3 = $AspectRatioContainer/Answer3_btn
-@onready var answer_option4 = $AspectRatioContainer/Answer4_btn
+@onready var answer_option1 = $ButtonContainer/Answer1_btn
+@onready var answer_option2 = $ButtonContainer/Answer2_btn
+@onready var answer_option3 = $ButtonContainer/Answer3_btn
+@onready var answer_option4 = $ButtonContainer/Answer4_btn
 @onready var guess_word = $GuessWordLabel
 
 var words = {}
@@ -22,7 +22,6 @@ func load_words_from_file(file_path):
 	var file = FileAccess.open(file_path, FileAccess.READ)
 	
 	if file:
-		
 		while not file.eof_reached():
 			var line = file.get_line()
 			var parts = line.split(",")

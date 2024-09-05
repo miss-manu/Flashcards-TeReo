@@ -127,6 +127,11 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_3iu3s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_n55h8")
 text = "Score"
 
+[node name="levels_panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="main_panel/ButtonsContainer/start_btn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="main_panel/ButtonsContainer/levels_btn" to="." method="_on_levels_btn_pressed"]
 [connection signal="pressed" from="main_panel/ButtonsContainer/score_btn" to="." method="_on_score_btn_pressed"]
