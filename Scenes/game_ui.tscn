@@ -1,17 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjg8c8ljqbiod"]
+[gd_scene load_steps=13 format=3 uid="uid://cjg8c8ljqbiod"]
 
-[ext_resource type="Script" path="res://Scripts/game_ui.gd" id="1_ffqku"]
+[ext_resource type="Script" uid="uid://c5a2hu47tmbd8" path="res://Scripts/game_ui.gd" id="1_ffqku"]
 [ext_resource type="FontFile" uid="uid://cbh4o7uvh08ww" path="res://UI/Font/Roboto-Black.ttf" id="2_ew2xq"]
 [ext_resource type="Texture2D" uid="uid://6pyyv0qj0mri" path="res://UI/GUI/Gen UI/UI_WINDOW (1).png" id="3_1dylo"]
 [ext_resource type="Texture2D" uid="uid://dhjdhbfwnyaab" path="res://UI/GUI/Buttons/BTN_GRAY_RECT_OUT.png" id="3_feu15"]
 [ext_resource type="Texture2D" uid="uid://bjyq26bquntlu" path="res://UI/GUI/Buttons/BTN_BLUE_RECT_OUT.png" id="4_sdpab"]
 [ext_resource type="Texture2D" uid="uid://d3e27wbumdvqt" path="res://UI/GUI/Buttons/BTN_BLUE_RECT_IN.png" id="5_wnmy0"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1t2s1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3t1kc"]
+bg_color = Color(0.0295066, 0.0295066, 0.0295065, 1)
+corner_detail = 1
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_785wn"]
 texture = ExtResource("3_1dylo")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dpn4j"]
-texture = ExtResource("3_feu15")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ofbnu"]
 texture = ExtResource("4_sdpab")
@@ -19,7 +22,11 @@ texture = ExtResource("4_sdpab")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wyk10"]
 texture = ExtResource("5_wnmy0")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dpn4j"]
+texture = ExtResource("3_feu15")
+
 [node name="GameUI" type="Control"]
+material = SubResource("CanvasItemMaterial_1t2s1")
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,6 +34,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ffqku")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 646.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3t1kc")
 
 [node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 1
@@ -92,37 +105,45 @@ theme_override_constants/separation = 10
 [node name="Answer1_btn" type="Button" parent="ButtonContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxTexture_dpn4j")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ofbnu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wyk10")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dpn4j")
 text = "Answer 1"
 
 [node name="Answer2_btn" type="Button" parent="ButtonContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxTexture_dpn4j")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ofbnu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wyk10")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dpn4j")
 text = "Answer 2"
 metadata/_edit_use_anchors_ = true
 
 [node name="Answer3_btn" type="Button" parent="ButtonContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxTexture_dpn4j")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ofbnu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wyk10")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dpn4j")
 text = "Answer 3"
 metadata/_edit_use_anchors_ = true
 
 [node name="Answer4_btn" type="Button" parent="ButtonContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxTexture_dpn4j")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ofbnu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wyk10")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dpn4j")
 text = "Answer 4"
 metadata/_edit_use_anchors_ = true
+
+[node name="GameOverLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 239.0
+offset_right = 427.0
+offset_bottom = 262.0
+text = "THis is the label"
 
 [connection signal="pressed" from="ButtonContainer/Answer1_btn" to="." method="_on_answer_1_btn_pressed"]
 [connection signal="pressed" from="ButtonContainer/Answer2_btn" to="." method="_on_answer_2_btn_pressed"]

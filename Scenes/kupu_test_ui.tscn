@@ -1,0 +1,178 @@
+[gd_scene load_steps=16 format=3 uid="uid://ctu70frtpsfbm"]
+
+[ext_resource type="Script" uid="uid://c08xuxqdc4gyc" path="res://Scripts/kupu_test_ui.gd" id="1_my2vt"]
+[ext_resource type="FontFile" uid="uid://cbh4o7uvh08ww" path="res://UI/Font/Roboto-Black.ttf" id="2_luc31"]
+[ext_resource type="Texture2D" uid="uid://6pyyv0qj0mri" path="res://UI/GUI/Gen UI/UI_WINDOW (1).png" id="3_ulqgi"]
+[ext_resource type="FontFile" uid="uid://cmf81weueq5sl" path="res://UI/Font/Roboto-Bold.ttf" id="4_luc31"]
+[ext_resource type="Texture2D" uid="uid://bnb3kaahmo17q" path="res://UI/GUI/Buttons/BTN_LORANGE_RECT_OUT.png" id="5_ulqgi"]
+[ext_resource type="Texture2D" uid="uid://c06la42ev0t85" path="res://UI/GUI/Buttons/BTN_LORANGE_RECT_IN.png" id="6_edv2g"]
+[ext_resource type="Texture2D" uid="uid://y3a3rf3lqoni" path="res://UI/GUI/Buttons/BTN_ORANGE_RECT_OUT.png" id="7_p73w1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my2vt"]
+bg_color = Color(0.0295066, 0.0295066, 0.0295065, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_785wn"]
+texture = ExtResource("3_ulqgi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ggex"]
+texture = ExtResource("5_ulqgi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dek8v"]
+texture = ExtResource("6_edv2g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ctu0o"]
+texture = ExtResource("7_p73w1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ixroj"]
+texture = ExtResource("5_ulqgi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gx3k"]
+texture = ExtResource("6_edv2g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jmt7h"]
+texture = ExtResource("7_p73w1")
+
+[node name="Test_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_my2vt")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1154.0
+offset_bottom = 646.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_my2vt")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 91.0
+offset_top = -555.0
+offset_right = 386.0
+offset_bottom = -475.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "Current score:"
+vertical_alignment = 1
+
+[node name="LivesLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 354.0
+offset_top = -168.0
+offset_right = 649.0
+offset_bottom = -88.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "Lives:"
+vertical_alignment = 1
+
+[node name="GuessWordLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 88.0
+offset_top = -153.0
+offset_right = 650.0
+offset_bottom = 158.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_luc31")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxTexture_785wn")
+text = "Guess Word Display"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FeedbackLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 512.0
+offset_top = 176.0
+offset_right = 644.0
+offset_bottom = 199.0
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -448.0
+offset_top = -68.0
+offset_right = -243.0
+offset_bottom = 60.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="finish_btn" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.811765, 0.211765, 0.298039, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.968627, 0.576471, 0.117647, 1)
+theme_override_fonts/font = ExtResource("4_luc31")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8ggex")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dek8v")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ctu0o")
+text = "Finish Test"
+
+[node name="return_btn" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_luc31")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ixroj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8gx3k")
+theme_override_styles/normal = SubResource("StyleBoxTexture_jmt7h")
+text = "Return to menu
+"
+
+[node name="GetUserAnswer" type="Label" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 376.0
+offset_right = 411.0
+offset_bottom = 399.0
+
+[node name="Label" type="Label" parent="GetUserAnswer"]
+layout_mode = 0
+offset_left = -44.0
+offset_right = 149.0
+offset_bottom = 23.0
+text = "Write your answer below"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="GetUserAnswer"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -44.0
+offset_top = 28.0
+offset_right = 26.0
+offset_bottom = 59.0
+scale = Vector2(3.64, 1)
+max_length = 20
+
+[node name="Button" type="Button" parent="GetUserAnswer"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 228.0
+offset_top = 27.0
+offset_right = 292.0
+offset_bottom = 59.0
+text = "Check"
+
+[connection signal="pressed" from="ButtonContainer/finish_btn" to="." method="_on_finish_btn_pressed"]
+[connection signal="pressed" from="ButtonContainer/return_btn" to="." method="_on_return_btn_pressed"]

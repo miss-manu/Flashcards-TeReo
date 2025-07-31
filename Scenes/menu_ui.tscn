@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://d1km5jidkihcl"]
 
-[ext_resource type="Script" path="res://Scripts/menu_ui.gd" id="1_ma8at"]
+[ext_resource type="Script" uid="uid://du0ip8fhc477w" path="res://Scripts/menu_ui.gd" id="1_ma8at"]
 [ext_resource type="FontFile" uid="uid://cbh4o7uvh08ww" path="res://UI/Font/Roboto-Black.ttf" id="1_wuebl"]
 [ext_resource type="Texture2D" uid="uid://dbutq1bvh1hs5" path="res://UI/GUI/Gen UI/UI_COLORBAR (1).png" id="2_6teix"]
 [ext_resource type="Texture2D" uid="uid://y3a3rf3lqoni" path="res://UI/GUI/Buttons/BTN_ORANGE_RECT_OUT.png" id="2_un0yd"]
@@ -25,14 +25,14 @@ texture = ExtResource("3_omaor")
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m8eyo"]
-texture = ExtResource("2_un0yd")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3iu3s"]
 texture = ExtResource("3_rffbo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n55h8"]
 texture = ExtResource("4_2bv30")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m8eyo"]
+texture = ExtResource("2_un0yd")
 
 [node name="menu_ui" type="Control"]
 layout_mode = 3
@@ -44,6 +44,7 @@ grow_vertical = 2
 script = ExtResource("1_ma8at")
 
 [node name="main_panel" type="Panel" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,27 +95,27 @@ grow_vertical = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="start_btn" type="Button" parent="main_panel/ButtonsContainer"]
+[node name="learning_btn" type="Button" parent="main_panel/ButtonsContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.811765, 0.211765, 0.298039, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.968627, 0.576471, 0.117647, 1)
-theme_override_colors/font_hover_color = Color(0.811765, 0.211765, 0.298039, 1)
 theme_override_fonts/font = ExtResource("4_8hf4x")
-theme_override_styles/normal = SubResource("StyleBoxTexture_m8eyo")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3iu3s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_n55h8")
-text = "Start"
+theme_override_styles/normal = SubResource("StyleBoxTexture_m8eyo")
+text = "Start Learning"
 
-[node name="levels_btn" type="Button" parent="main_panel/ButtonsContainer"]
+[node name="testing_btn" type="Button" parent="main_panel/ButtonsContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_8hf4x")
-theme_override_styles/normal = SubResource("StyleBoxTexture_m8eyo")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3iu3s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_n55h8")
-text = "Levels
+theme_override_styles/normal = SubResource("StyleBoxTexture_m8eyo")
+text = "Test Yourself
 "
 
 [node name="score_btn" type="Button" parent="main_panel/ButtonsContainer"]
@@ -122,16 +123,11 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_8hf4x")
-theme_override_styles/normal = SubResource("StyleBoxTexture_m8eyo")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3iu3s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_n55h8")
-text = "Score"
+theme_override_styles/normal = SubResource("StyleBoxTexture_m8eyo")
+text = "Highest Score"
 
-[node name="levels_panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[connection signal="pressed" from="main_panel/ButtonsContainer/start_btn" to="." method="_on_start_btn_pressed"]
-[connection signal="pressed" from="main_panel/ButtonsContainer/levels_btn" to="." method="_on_levels_btn_pressed"]
+[connection signal="pressed" from="main_panel/ButtonsContainer/learning_btn" to="." method="_on_learning_btn_pressed"]
+[connection signal="pressed" from="main_panel/ButtonsContainer/testing_btn" to="." method="_on_testing_btn_pressed"]
 [connection signal="pressed" from="main_panel/ButtonsContainer/score_btn" to="." method="_on_score_btn_pressed"]

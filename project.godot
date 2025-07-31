@@ -12,8 +12,12 @@ config_version=5
 
 config/name="Flashcards-TeReo"
 run/main_scene="res://Scenes/menu_ui.tscn"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+KupuManager="*res://Scripts/kupu_manager.gd"
 
 [rendering]
 

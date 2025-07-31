@@ -1,5 +1,7 @@
+#menu_ui.gd
 extends Control
 
+@onready var main_menu_ui = %main_panel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -7,17 +9,20 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
-func _on_start_btn_pressed():
-	get_tree().change_scene_to_file("res://Scenes/game_ui.tscn")
+func _on_learning_btn_pressed() -> void:
+	var test_screen = load("res://Scenes/kupu_test_ui.tscn").instantiate()
+	add_child(test_screen)
+	main_menu_ui.hide()  # Hide the menu content
+	print("GAME UI scene loaded")
 
 
-func _on_levels_btn_pressed():
+func _on_testing_btn_pressed() -> void:
 	pass # Replace with function body.
 
 
-func _on_score_btn_pressed():
+func _on_score_btn_pressed() -> void:
 	pass # Replace with function body.
